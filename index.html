@@ -772,6 +772,116 @@
       </div>
     </section>
 
+    <section class="section alt" data-track-view="BlogSectionViewed">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">From The Blog</span>
+          <h2>Website Growth Insights You Can Apply Before Your Next Launch</h2>
+          <p>Three practical reads on conversion strategy, speed, and trust building for businesses that want websites to generate real leads.</p>
+        </div>
+        <div class="blog-grid">
+          <article class="blog-card reveal" data-tilt>
+            <div class="blog-thumb">
+              <img src="assets/images/blog-homepage-blueprint.svg" alt="Illustration of a homepage wireframe with headline, proof, and call-to-action blocks">
+            </div>
+            <div class="blog-copy">
+              <div class="blog-meta">
+                <span class="blog-tag">CRO</span>
+                <span>~500 words</span>
+              </div>
+              <h3>Homepage Blueprint: Turn More Visitors Into Qualified Leads</h3>
+              <p>Your homepage should explain the offer, build trust fast, and move serious buyers toward a clear next step.</p>
+              <div class="chip-row">
+                <span class="chip">Offer Clarity</span>
+                <span class="chip">Proof Blocks</span>
+                <span class="chip">CTA Flow</span>
+              </div>
+              <button
+                class="ghost-btn blog-read-btn"
+                type="button"
+                data-blog-open="homepage-blueprint"
+                data-blog-title="Homepage Blueprint: Turn More Visitors Into Qualified Leads"
+                data-blog-tag="CRO"
+                data-blog-length="~500 words"
+                data-blog-image="assets/images/blog-homepage-blueprint.svg"
+                data-blog-image-alt="Illustration of a homepage wireframe with headline, proof, and call-to-action blocks"
+                data-track="ViewContent"
+                data-track-label="Open Blog Homepage Blueprint"
+              >
+                Read Full Article
+              </button>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-tilt>
+            <div class="blog-thumb">
+              <img src="assets/images/blog-speed-growth.svg" alt="Illustration of a performance dashboard with a speed gauge and growth chart">
+            </div>
+            <div class="blog-copy">
+              <div class="blog-meta">
+                <span class="blog-tag">Performance</span>
+                <span>~500 words</span>
+              </div>
+              <h3>Why Website Speed Improves SEO, Ads, And Conversion Together</h3>
+              <p>Fast pages do more than feel nice. They reduce drop-off, improve campaign efficiency, and strengthen first impressions.</p>
+              <div class="chip-row">
+                <span class="chip">Core Web Vitals</span>
+                <span class="chip">Better ROAS</span>
+                <span class="chip">Mobile UX</span>
+              </div>
+              <button
+                class="ghost-btn blog-read-btn"
+                type="button"
+                data-blog-open="speed-growth"
+                data-blog-title="Why Website Speed Improves SEO, Ads, And Conversion Together"
+                data-blog-tag="Performance"
+                data-blog-length="~500 words"
+                data-blog-image="assets/images/blog-speed-growth.svg"
+                data-blog-image-alt="Illustration of a performance dashboard with a speed gauge and growth chart"
+                data-track="ViewContent"
+                data-track-label="Open Blog Speed Growth"
+              >
+                Read Full Article
+              </button>
+            </div>
+          </article>
+
+          <article class="blog-card reveal" data-tilt>
+            <div class="blog-thumb">
+              <img src="assets/images/blog-trust-stack.svg" alt="Illustration of website trust elements like reviews, badges, and contact details">
+            </div>
+            <div class="blog-copy">
+              <div class="blog-meta">
+                <span class="blog-tag">Trust + SEO</span>
+                <span>~500 words</span>
+              </div>
+              <h3>The Trust Stack Every Service Website Needs Before Running Ads</h3>
+              <p>Before you spend more on traffic, make sure your site shows credibility, process, proof, and easy ways to contact you.</p>
+              <div class="chip-row">
+                <span class="chip">Testimonials</span>
+                <span class="chip">Local Proof</span>
+                <span class="chip">Lead Quality</span>
+              </div>
+              <button
+                class="ghost-btn blog-read-btn"
+                type="button"
+                data-blog-open="trust-stack"
+                data-blog-title="The Trust Stack Every Service Website Needs Before Running Ads"
+                data-blog-tag="Trust + SEO"
+                data-blog-length="~500 words"
+                data-blog-image="assets/images/blog-trust-stack.svg"
+                data-blog-image-alt="Illustration of website trust elements like reviews, badges, and contact details"
+                data-track="ViewContent"
+                data-track-label="Open Blog Trust Stack"
+              >
+                Read Full Article
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
         <div class="section-head reveal">
@@ -915,6 +1025,63 @@
       </div>
     </section>
   </main>
+
+  <div class="blog-modal" data-blog-modal hidden>
+    <div class="blog-dialog" role="dialog" aria-modal="true" aria-labelledby="blogModalTitle">
+      <button class="blog-modal-close" type="button" data-blog-close aria-label="Close blog popup">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="blog-modal-layout">
+        <div class="blog-modal-media">
+          <img id="blogModalImage" src="assets/images/blog-homepage-blueprint.svg" alt="">
+        </div>
+        <div class="blog-modal-content" data-blog-content>
+          <div class="blog-meta blog-modal-meta">
+            <span class="blog-tag" id="blogModalTag">Insight</span>
+            <span id="blogModalLength">~500 words</span>
+          </div>
+          <h3 id="blogModalTitle">Website Growth Insight</h3>
+          <div class="blog-article" id="blogModalBody"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <template id="blog-template-homepage-blueprint">
+    <p>Most homepages underperform for one simple reason: they try to impress before they clarify. A visitor lands on the page and, within a few seconds, asks three silent questions. What does this company actually do? Is it for someone like me? What should I do next? If your page answers those questions fast, people keep scrolling. If it does not, even strong visuals will not save the conversion. A homepage is not just a digital brochure. It is the front door to your sales process. At Webakoof, we treat the homepage as the place where message, trust, and action come together. Design matters, but the order of information matters just as much.</p>
+    <p>The first screen should do the heaviest lifting. Your headline should name the outcome, not just the service. Your subheading should explain who you help and how. Your primary button should be obvious and specific, whether that means booking a call, requesting a proposal, or seeing your work. Many businesses lose good visitors because the hero section is too vague, too crowded, or too clever. If a prospect has to decode your offer, they will usually leave. The strongest homepages feel simple because the strategy is sharp. They remove confusion, highlight relevance, and quickly show why your solution deserves attention.</p>
+    <p>Once the visitor understands the offer, the next job is trust. Claims without proof feel like marketing. Claims supported by numbers, testimonials, before-and-after outcomes, and a clear process feel believable. This is why proof blocks should sit close to key promises. If you say you build revenue-focused websites, show conversion improvements, launch speed, or client feedback that supports it. If you say you work fast, explain your workflow and delivery checkpoints. A homepage should guide a visitor from curiosity to confidence. That means every important statement should be paired with a reason to believe it.</p>
+    <p>Below the fold, the page should continue reducing friction. Show your services in terms of business outcomes, not only features. Explain how discovery, design, development, and launch connect to growth. Repeat strong calls to action after major sections so the visitor never has to search for the next step. Keep mobile in mind too. A large share of website traffic arrives on phones, which means your copy must scan well, buttons must stay easy to tap, and proof must remain visible without overwhelming the layout. A premium-looking website is helpful, but a structured website that guides decisions is what usually wins the lead.</p>
+    <p>The final layer is measurement. A high-converting homepage is never finished after launch. You need to track button clicks, form starts, form completions, scroll depth, and the sections people engage with most. That data shows where visitors gain confidence and where they hesitate. Over time, small improvements to wording, proof, CTA placement, and page speed can have a meaningful effect on qualified leads. The homepage should be treated like a conversion system, not a one-time design exercise. When clarity, proof, and action work together, your website starts behaving like part of the sales team instead of a passive online brochure.</p>
+    <div class="blog-article-cta">
+      <p>Need help restructuring your homepage for better conversions? Webakoof plans, designs, and builds websites around lead quality, speed, and measurable growth.</p>
+      <a class="btn" href="contact.html" data-track="Lead" data-track-label="Blog Modal Contact Homepage Blueprint">Discuss Your Website</a>
+    </div>
+  </template>
+
+  <template id="blog-template-speed-growth">
+    <p>Website speed is often treated like a technical checklist item, but in practice it is a sales and marketing issue. When a visitor clicks your ad, search result, or social link, speed becomes part of the first impression. A slow load creates doubt before your message even appears. People start wondering whether the business is active, trustworthy, or worth the wait. On mobile, the effect is even stronger because users are usually distracted, comparing options quickly, and working with weaker connections. This is why faster websites do not just feel better. They usually hold attention longer, reduce bounce, and create a smoother path into the offer.</p>
+    <p>Speed also influences the channels that send you traffic. Search engines reward pages that deliver a cleaner user experience, especially when layout shifts are controlled and main content loads quickly. Paid campaigns benefit too because visitors from ads are often colder and less patient than branded traffic. If a landing page takes too long to become usable, part of your ad spend is lost before the pitch even starts. Good performance supports SEO, campaign efficiency, and conversion together. That is why Webakoof treats site speed as a growth lever, not just a developer metric hidden inside a report.</p>
+    <p>The biggest performance issues are usually predictable. Oversized images, unoptimized videos, heavy sliders, too many third-party scripts, cluttered code, and poor font loading can all slow a page down fast. Sometimes a site looks polished on a designer's laptop but feels sluggish on an average mobile device in the real world. That gap matters. The best approach is to prioritize what creates business value first. Load essential content early, compress media properly, keep scripts lean, delay non-critical features, and avoid decorative elements that slow down action-oriented pages. Performance should support the message, not compete with it.</p>
+    <p>Speed improvements also tend to improve conversion quality because the experience feels more stable. Buttons respond faster, forms become easier to complete, and users can read without sudden layout jumps. This matters most on landing pages, service pages, and checkout flows, where hesitation is expensive. If your site is running ads, every second of delay can lower the number of people who reach your offer with full attention. Faster pages help prospects get to the proof, pricing, and contact step before interest drops. In that sense, performance work protects the value of every visitor you already paid to attract.</p>
+    <p>The smartest teams treat speed as an ongoing standard, not a one-time cleanup. Set performance budgets before building, test on mobile devices, and review Core Web Vitals after every major update. Keep asking whether a new script, animation, or plugin is helping revenue or just adding weight. The goal is not to chase perfect scores for vanity. The goal is to create a website that loads quickly, feels reliable, and removes friction from the buying journey. When your website is fast, your SEO has a stronger foundation, your ads waste less money, and your conversion paths stay clear from first click to final form submission.</p>
+    <div class="blog-article-cta">
+      <p>Want a faster website without sacrificing design quality? Webakoof builds conversion-focused pages that stay lightweight, responsive, and ready for growth campaigns.</p>
+      <a class="btn" href="contact.html" data-track="Lead" data-track-label="Blog Modal Contact Speed Growth">Get A Performance Audit</a>
+    </div>
+  </template>
+
+  <template id="blog-template-trust-stack">
+    <p>Many service businesses assume poor leads are only a traffic problem, so they spend more on ads or SEO before fixing the website itself. In reality, weak lead quality often starts with weak trust. A visitor may understand what you offer, but still hesitate because the site does not make the business feel established, reliable, or easy to work with. Trust is what helps a buyer move from interest to inquiry. Without it, the website attracts clicks but not confidence. That is why high-performing service websites need a clear trust stack: a set of signals that show credibility before the visitor has to take a risk.</p>
+    <p>A practical trust stack usually includes a few core elements. First, your offer should be specific enough that visitors know who you help and what problem you solve. Second, proof should appear early in the form of testimonials, results, reviews, case studies, or visual examples of past work. Third, your process should feel transparent. People want to know what happens after they contact you, how long a project may take, and what kind of communication to expect. Fourth, the website should show real human presence through team details, founder visibility, or authentic brand voice instead of generic stock-style messaging.</p>
+    <p>For service businesses that depend on local or regional demand, trust and local SEO often support each other. A website that clearly shows service areas, phone number, email, city references, and consistent business details feels easier to verify. Location-based proof, such as local case studies or client testimonials, can make the offer feel more immediate and believable. This is especially useful when users compare multiple providers quickly. If someone lands on your site and instantly sees that you serve their market, understand their type of project, and have real evidence of delivery, the conversation starts from a stronger place.</p>
+    <p>Where you place trust signals matters just as much as whether you include them. Testimonials hidden on a separate page help less than proof placed near calls to action. A polished hero section without supporting credibility underneath can still feel risky. The best websites keep reinforcing trust throughout the journey: proof near claims, FAQs near friction points, clear pricing or scope guidance where uncertainty appears, and strong contact information wherever commitment is requested. Even form design plays a role. Shorter, more thoughtful forms often attract better inquiries because they feel respectful and lower the effort required to start a conversation.</p>
+    <p>The goal is not to overload the page with badges, logos, and claims. Trust grows when the website feels consistent, honest, and easy to navigate. Strong design, fast loading, clear copy, and visible proof all work together to reduce doubt. When your trust stack is solid, paid traffic performs better, organic traffic converts better, and sales calls begin with more confidence. Before increasing your traffic budget, make sure your website is ready to receive it. A trustworthy website does not just look professional. It helps the right buyers believe they are in the right place and makes it easier for them to take the next step.</p>
+    <div class="blog-article-cta">
+      <p>Need a website that builds trust before your sales call starts? Webakoof combines proof-driven copy, strong UX, and fast development to improve lead quality.</p>
+      <a class="btn" href="contact.html" data-track="Lead" data-track-label="Blog Modal Contact Trust Stack">Plan A Trust-First Website</a>
+    </div>
+  </template>
 
   <footer>
     <div class="container footer-grid">

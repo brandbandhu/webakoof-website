@@ -379,6 +379,87 @@
     });
   }
 
+  function initBlogModal() {
+    const modal = document.querySelector("[data-blog-modal]");
+    const triggers = Array.from(document.querySelectorAll("[data-blog-open]"));
+    if (!modal || !triggers.length) return;
+
+    const closeBtn = modal.querySelector("[data-blog-close]");
+    const title = document.getElementById("blogModalTitle");
+    const tag = document.getElementById("blogModalTag");
+    const length = document.getElementById("blogModalLength");
+    const image = document.getElementById("blogModalImage");
+    const body = document.getElementById("blogModalBody");
+    const content = modal.querySelector("[data-blog-content]");
+    if (!closeBtn || !title || !tag || !length || !image || !body || !content) return;
+
+    let lastTrigger = null;
+    let closeTimer = 0;
+
+    function render(trigger) {
+      const key = String(trigger.dataset.blogOpen || "").trim();
+      if (!key) return false;
+
+      const template = document.getElementById(`blog-template-${key}`);
+      if (!(template instanceof HTMLTemplateElement)) return false;
+
+      title.textContent = trigger.dataset.blogTitle || "Website Growth Insight";
+      tag.textContent = trigger.dataset.blogTag || "Insight";
+      length.textContent = trigger.dataset.blogLength || "";
+      image.src = trigger.dataset.blogImage || "";
+      image.alt = trigger.dataset.blogImageAlt || "";
+      body.replaceChildren(template.content.cloneNode(true));
+      content.scrollTop = 0;
+      return true;
+    }
+
+    function open(trigger) {
+      if (!render(trigger)) return;
+      if (closeTimer) {
+        window.clearTimeout(closeTimer);
+        closeTimer = 0;
+      }
+
+      lastTrigger = trigger;
+      modal.hidden = false;
+      document.body.classList.add("blog-modal-open");
+      requestAnimationFrame(() => modal.classList.add("open"));
+      closeBtn.focus();
+
+      trackMetaCustom("BlogArticleOpened", {
+        article: trigger.dataset.blogOpen || "unknown",
+        page: document.body.dataset.page || "unknown",
+      });
+    }
+
+    function close() {
+      if (modal.hidden) return;
+      modal.classList.remove("open");
+      document.body.classList.remove("blog-modal-open");
+
+      closeTimer = window.setTimeout(() => {
+        modal.hidden = true;
+        body.replaceChildren();
+        closeTimer = 0;
+      }, 220);
+
+      if (lastTrigger) lastTrigger.focus();
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener("click", () => open(trigger));
+    });
+
+    closeBtn.addEventListener("click", close);
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) close();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && !modal.hidden) close();
+    });
+  }
+
   function initCodeCanvas() {
     const canvases = document.querySelectorAll("[data-code-canvas]");
     if (!canvases.length) return;
@@ -1293,6 +1374,7 @@
     initScrollReveal();
     initCounters();
     initFaq();
+    initBlogModal();
     initCodeCanvas();
     initTerminalRotate();
     initSymbolCanvas();

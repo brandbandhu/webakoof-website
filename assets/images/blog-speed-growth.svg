@@ -1,0 +1,38 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-speed" x1="100" y1="30" x2="1170" y2="690" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08121F"/>
+      <stop offset="0.54" stop-color="#11304D"/>
+      <stop offset="1" stop-color="#1BD0A4"/>
+    </linearGradient>
+    <linearGradient id="panel-speed" x1="120" y1="100" x2="640" y2="560" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#EFF7FB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="36" fill="url(#bg-speed)"/>
+  <circle cx="180" cy="118" r="102" fill="#1BD0A4" fill-opacity="0.16"/>
+  <circle cx="1130" cy="590" r="144" fill="#FFD55C" fill-opacity="0.12"/>
+  <rect x="112" y="106" width="478" height="442" rx="28" fill="url(#panel-speed)"/>
+  <circle cx="352" cy="314" r="126" fill="#0F1C31"/>
+  <path d="M278 364C294 272 380 224 460 252" stroke="#364968" stroke-width="18" stroke-linecap="round"/>
+  <path d="M280 364C300 282 374 236 430 248" stroke="#FFD54D" stroke-width="18" stroke-linecap="round"/>
+  <path d="M350 314L428 254" stroke="#7CF0D3" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="352" cy="314" r="18" fill="#FFFFFF"/>
+  <text x="286" y="470" fill="#142133" font-family="Arial, sans-serif" font-size="26" font-weight="700">Faster Pages</text>
+  <text x="260" y="504" fill="#59697D" font-family="Arial, sans-serif" font-size="20">Lower bounce and stronger first impressions</text>
+  <rect x="652" y="110" width="488" height="196" rx="26" fill="#FFFFFF" fill-opacity="0.93"/>
+  <rect x="700" y="158" width="246" height="18" rx="9" fill="#132641"/>
+  <rect x="700" y="200" width="198" height="14" rx="7" fill="#9DB0C4"/>
+  <rect x="700" y="236" width="340" height="20" rx="10" fill="#E7F7F3"/>
+  <rect x="700" y="236" width="286" height="20" rx="10" fill="#1BD0A4"/>
+  <text x="1002" y="252" fill="#0F1C31" font-family="Arial, sans-serif" font-size="18" font-weight="700">2.1s LCP</text>
+  <rect x="652" y="344" width="488" height="212" rx="26" fill="#0E1829"/>
+  <path d="M708 502L784 444L858 462L930 380L1010 406L1086 332" stroke="#7CF0D3" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="706" y="384" width="122" height="14" rx="7" fill="#94A4BA"/>
+  <rect x="706" y="414" width="164" height="14" rx="7" fill="#FFD55C"/>
+  <text x="708" y="534" fill="#F3F7FF" font-family="Arial, sans-serif" font-size="26" font-weight="700">SEO + Ads + Conversion</text>
+  <text x="710" y="570" fill="#B6C5DB" font-family="Arial, sans-serif" font-size="20">Performance supports every traffic channel at once.</text>
+  <text x="114" y="640" fill="#EAF5FF" font-family="Arial, sans-serif" font-size="52" font-weight="700">Speed Drives Growth</text>
+  <text x="116" y="678" fill="#C6D4E8" font-family="Arial, sans-serif" font-size="24">Treat loading time like a revenue metric, not a side task.</text>
+</svg>

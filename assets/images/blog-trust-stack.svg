@@ -1,0 +1,39 @@
+<svg width="1280" height="720" viewBox="0 0 1280 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-trust" x1="80" y1="20" x2="1160" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#121212"/>
+      <stop offset="0.5" stop-color="#2B2E34"/>
+      <stop offset="1" stop-color="#FFC93A"/>
+    </linearGradient>
+    <linearGradient id="panel-trust" x1="170" y1="130" x2="956" y2="602" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F3F7FC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" rx="36" fill="url(#bg-trust)"/>
+  <circle cx="1090" cy="130" r="124" fill="#FFD55C" fill-opacity="0.15"/>
+  <circle cx="172" cy="568" r="142" fill="#5FB6FF" fill-opacity="0.12"/>
+  <rect x="160" y="112" width="796" height="500" rx="30" fill="url(#panel-trust)"/>
+  <rect x="214" y="166" width="256" height="150" rx="22" fill="#0F1727"/>
+  <path d="M342 198L392 220V276C392 312 364 340 342 350C320 340 292 312 292 276V220L342 198Z" fill="#FFD54D"/>
+  <path d="M322 272L336 286L366 250" stroke="#15233C" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="214" y="356" width="256" height="190" rx="22" fill="#FFFFFF" stroke="#E1E8F1" stroke-width="4"/>
+  <rect x="248" y="394" width="110" height="14" rx="7" fill="#182338"/>
+  <rect x="248" y="426" width="158" height="14" rx="7" fill="#AAB7C8"/>
+  <rect x="248" y="470" width="172" height="46" rx="16" fill="#FFF1B3"/>
+  <text x="276" y="500" fill="#1B2740" font-family="Arial, sans-serif" font-size="20" font-weight="700">Testimonials</text>
+  <rect x="514" y="166" width="388" height="176" rx="22" fill="#FFFFFF" stroke="#E1E8F1" stroke-width="4"/>
+  <rect x="560" y="206" width="172" height="16" rx="8" fill="#182338"/>
+  <rect x="560" y="242" width="126" height="14" rx="7" fill="#AAB7C8"/>
+  <circle cx="834" cy="234" r="46" fill="#FFF1B3"/>
+  <path d="M834 204L842 225H864L846 238L852 260L834 247L816 260L822 238L804 225H826L834 204Z" fill="#1B2740"/>
+  <rect x="514" y="378" width="180" height="168" rx="22" fill="#FFFDF4" stroke="#ECDB93" stroke-width="4"/>
+  <rect x="742" y="378" width="160" height="168" rx="22" fill="#0F1727"/>
+  <path d="M820 434C820 470 792 494 772 512C752 494 724 470 724 434C724 398 752 382 772 382C792 382 820 398 820 434Z" fill="#7FD0FF"/>
+  <circle cx="1078" cy="278" r="102" fill="#FFFFFF" fill-opacity="0.9"/>
+  <path d="M1028 290H1128" stroke="#182338" stroke-width="12" stroke-linecap="round"/>
+  <path d="M1078 240V340" stroke="#182338" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="1078" cy="290" r="18" fill="#FFD54D"/>
+  <text x="160" y="644" fill="#F8F8F8" font-family="Arial, sans-serif" font-size="52" font-weight="700">Build Trust Before Traffic</text>
+  <text x="162" y="680" fill="#DADFE7" font-family="Arial, sans-serif" font-size="24">Proof, process, and clear contact details raise lead quality.</text>
+</svg>
