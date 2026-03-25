@@ -2592,7 +2592,7 @@ body.page-leave .page-wipe::after {
 .blog-grid {
   margin-top: 1.35rem;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
 }
 
@@ -2626,10 +2626,30 @@ body.page-leave .page-wipe::after {
 
 .blog-copy {
   padding: 1.1rem;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto minmax(5.8rem, auto) minmax(6.4rem, auto) auto auto;
+  align-content: start;
   gap: 0.78rem;
   flex: 1;
+}
+
+.blog-copy > h3,
+.blog-copy > p {
+  margin: 0;
+}
+
+.blog-copy > h3 {
+  line-height: 1.14;
+}
+
+.blog-copy > p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.blog-copy .chip-row {
+  margin-top: 0;
+  align-self: start;
 }
 
 .blog-meta {
@@ -2657,12 +2677,9 @@ body.page-leave .page-wipe::after {
   text-transform: uppercase;
 }
 
-.blog-card p {
-  font-size: 0.95rem;
-}
-
 .blog-read-btn {
-  margin-top: auto;
+  margin-top: 0;
+  width: 100%;
 }
 
 .blog-modal {
@@ -3494,6 +3511,10 @@ footer {
     min-height: 220px;
     max-height: 260px;
     padding: 1rem;
+  }
+
+  .blog-copy {
+    grid-template-rows: auto;
   }
 
   .quick-facts,
