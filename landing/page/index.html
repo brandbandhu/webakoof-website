@@ -539,6 +539,7 @@
     const submitBtn = document.getElementById("submit-btn");
     const errorEl = document.getElementById("form-error");
     const successEl = document.getElementById("success-msg");
+    const privyrWebhookUrl = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/cgVVSiYW";
 
     function showError(message) {
       errorEl.textContent = message;
@@ -552,6 +553,10 @@
 
     function validatePhone(value) {
       return /^[6-9][0-9]{9}$/.test(value.replace(/\s+/g, ""));
+    }
+
+    function firstName(value) {
+      return String(value || "").trim().split(/\s+/)[0] || "";
     }
 
     form.addEventListener("submit", async (event) => {
@@ -593,19 +598,23 @@
       submitBtn.textContent = "Submitting...";
 
       const payload = {
-        full_name: name,
-        whatsapp_number: "+91" + phone,
-        business_name: businessName,
-        business_type: businessType,
-        timeline,
-        source: "premium",
-        captured_from: "Webakoof Landing Page",
-        source_page: "/landing/page",
-        submitted_at: new Date().toISOString()
+        name,
+        phone: "+91" + phone,
+        display_name: firstName(name),
+        other_fields: {
+          business_name: businessName,
+          business_type: businessType,
+          timeline,
+          source: "premium",
+          captured_from: "Webakoof Landing Page",
+          source_page: "/landing/page",
+          crm_tag: "[Webakoof - Premium Whale]",
+          submitted_at: new Date().toISOString()
+        }
       };
 
       try {
-        const response = await fetch("/api/privyr-lead", {
+        const response = await fetch(privyrWebhookUrl, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
