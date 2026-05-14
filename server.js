@@ -4,8 +4,14 @@ const path = require("path");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const PRIVYR_WEBHOOK_URL = process.env.PRIVYR_WEBHOOK_URL || "https://webhook.privyr.com/dummy-url";
+const sendPage = (res, ...segments) => res.sendFile(path.join(__dirname, ...segments));
 
 app.use(express.json({ limit: "1mb" }));
+
+app.get("/landing/page", (_req, res) => {
+  sendPage(res, "landing", "page", "index.html");
+});
+
 app.use(express.static(__dirname));
 
 const validSource = (source) => (source === "premium" ? "premium" : "basic");
@@ -60,7 +66,7 @@ app.get("/health", (_req, res) => {
 });
 
 app.get("/", (_req, res) => {
-  res.sendFile(path.join(__dirname, "calculator.html"));
+  sendPage(res, "calculator.html");
 });
 
 app.listen(PORT, () => {
