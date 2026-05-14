@@ -3,7 +3,7 @@ const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const PRIVYR_WEBHOOK_URL = process.env.PRIVYR_WEBHOOK_URL || "https://webhook.privyr.com/dummy-url";
+const PRIVYR_WEBHOOK_URL = process.env.PRIVYR_WEBHOOK_URL || "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/cgVVSiYW";
 const sendPage = (res, ...segments) => res.sendFile(path.join(__dirname, ...segments));
 
 app.use(express.json({ limit: "1mb" }));
@@ -18,23 +18,41 @@ const validSource = (source) => (source === "premium" ? "premium" : "basic");
 const crmTagBySource = (source) => (
   validSource(source) === "premium" ? "[Webakoof - Premium Whale]" : "[Webakoof - Basic]"
 );
+const toText = (value) => String(value || "").trim();
+const firstName = (name) => toText(name).split(/\s+/)[0] || "";
 
 app.post("/api/privyr-lead", async (req, res) => {
   const source = validSource(req.body?.source);
-  const fullName = String(req.body?.full_name || "").trim();
-  const businessName = String(req.body?.business_name || "").trim();
-  const whatsappNumber = String(req.body?.whatsapp_number || "").trim();
+  const fullName = toText(req.body?.full_name || req.body?.name);
+  const businessName = toText(req.body?.business_name);
+  const businessType = toText(req.body?.business_type);
+  const timeline = toText(req.body?.timeline);
+  const whatsappNumber = toText(req.body?.whatsapp_number || req.body?.phone);
+  const email = toText(req.body?.email);
+  const submittedAt = req.body?.submitted_at || new Date().toISOString();
 
   if (!fullName || !businessName || !whatsappNumber) {
     return res.status(400).json({ ok: false, message: "Missing required fields." });
   }
 
   const payload = {
-    ...req.body,
-    source,
-    crm_tag: crmTagBySource(source),
-    submitted_at: req.body?.submitted_at || new Date().toISOString()
+    name: fullName,
+    phone: whatsappNumber,
+    display_name: firstName(fullName),
+    other_fields: {
+      business_name: businessName,
+      business_type: businessType,
+      timeline,
+      source,
+      captured_from: toText(req.body?.captured_from) || "Webakoof Landing Page",
+      source_page: toText(req.body?.source_page) || "/landing/page",
+      crm_tag: crmTagBySource(source),
+      submitted_at: submittedAt
+    }
   };
+  if (email) {
+    payload.email = email;
+  }
 
   try {
     const webhookResponse = await fetch(PRIVYR_WEBHOOK_URL, {
