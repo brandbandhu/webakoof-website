@@ -548,7 +548,8 @@
     const submitBtn = document.getElementById("submit-btn");
     const errorEl = document.getElementById("form-error");
     const successEl = document.getElementById("success-msg");
-    const privyrWebhookUrl = "https://www.privyr.com/api/v1/incoming-leads/0vZfjMQw/cgVVSiYW";
+    const crmWebhookUrl = window.WEBAKOOF_CRM_WEBHOOK_URL || "http://localhost:5000/api/webhooks/leads/webakoof";
+    const crmWebhookSecret = window.WEBAKOOF_CRM_WEBHOOK_SECRET || "crm_lead_webhook_secret";
 
     function showError(message) {
       errorEl.textContent = message;
@@ -607,26 +608,30 @@
       submitBtn.textContent = "Submitting...";
 
       const payload = {
+        provider: "webakoof",
+        source: "webakoof",
+        company_slug: "praavi",
         name,
+        full_name: name,
         phone: "+91" + phone,
-        display_name: firstName(name),
-        other_fields: {
-          business_name: businessName,
-          business_type: businessType,
-          timeline,
-          source: "premium",
-          captured_from: "Webakoof Landing Page",
-          source_page: "/landing/page",
-          crm_tag: "[Webakoof - Premium Whale]",
-          submitted_at: new Date().toISOString()
-        }
+        whatsapp_number: "+91" + phone,
+        company_name: businessName,
+        business_name: businessName,
+        business_type: businessType,
+        start_timeline: timeline,
+        notes: "Captured from Webakoof landing page",
+        captured_from: "Webakoof Landing Page",
+        source_page: "/landing/page",
+        crm_tag: "[Webakoof - Premium Whale]",
+        submitted_at: new Date().toISOString()
       };
 
       try {
-        const response = await fetch(privyrWebhookUrl, {
+        const response = await fetch(crmWebhookUrl, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json"
+            "Content-Type": "application/json",
+            "x-webhook-secret": crmWebhookSecret
           },
           body: JSON.stringify(payload)
         });
